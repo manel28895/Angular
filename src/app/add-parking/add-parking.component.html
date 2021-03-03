@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Park'In</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Park'In Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="../../../">
+<link rel="stylesheet" type="text/css" href='assets/styles/bootstrap4/bootstrap.min.css'>
+<link href="assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="assets/plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="assets/styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="assets/styles/responsive.css">
+<style>
+	/* Style The Dropdown Button */
+	.dropbtn {
+	  background-color: #4CAF50;
+	  color: white;
+	  padding: 16px;
+	  font-size: 16px;
+	  border: none;
+	  cursor: pointer;
+	}
+	
+	/* The container <div> - needed to position the dropdown content */
+	.dropdown {
+	  position: relative;
+	  display: inline-block;
+	}
+	
+	/* Dropdown Content (Hidden by Default) */
+	.dropdown-content {
+	  display: none;
+	  position: absolute;
+	  background-color: #f9f9f9;
+	  min-width: 160px;
+	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	  z-index: 1;
+	}
+	
+	/* Links inside the dropdown */
+	.dropdown-content a {
+	  color: black;
+	  padding: 12px 16px;
+	  text-decoration: none;
+	  display: block;
+	}
+	
+	/* Change color of dropdown links on hover */
+	.dropdown-content a:hover {background-color: #fa9e1b}
+	
+	/* Show the dropdown menu on hover */
+	.dropdown:hover .dropdown-content {
+	  display: block;
+	}
+	
+	/* Change the background color of the dropdown button when the dropdown content is shown */
+	.dropdown:hover .dropbtn {
+	  background-color: #8d4fff;
+	}
+	</style>
+</head>
+
+<body style="
+margin-top: 0px !important; 
+margin-left: 0px !important; 
+margin-bottom: 0px !important; 
+margin-right: 0px !important; 
+margin: 0px !important; 
+">
+
+<div class="super_container" >
+	
+
+	<!-- Header -->
+   
+	<header class="header">
+			<div class="go-back"><a (click)=MenuPage()><img src="assets/images/arrow.svg" ></a></div>
+		<!-- Main Navigation -->
+
+		<nav class="main_nav">
+			<div class="container" >
+			
+				<div class="row">
+					<div class="col main_nav_col d-flex flex-row align-items-center justify-content-start">
+						<div class="logo_container">
+							<div class="logo"><a href="#"><img src="assets/images/logo.png" alt="">Park'In</a></div>
+						</div>
+						<div class="main_nav_container ml-auto">
+							<ul class="main_nav_list">
+								<li class="main_nav_item"><a href="#">home</a></li>
+								<li class="main_nav_item"><a href="../../user/user.component.html">about us</a></li>
+								<li class="main_nav_item"><a href="offers.html">offers</a></li>
+							</ul>
+						</div>
+						
+							
+							
+				
+				        
+				   </div>
+			  </div>
+			  </div>
+	   </nav>
+
+	</header>
+
+	
+
+	<!-- Home -->
+
+
+
+	<div class="home" style="margin-top: 0%;  margin-right: 0%; margin-left: 0%;" >
+		
+		<!-- Home Slider -->
+
+		<div class="home_slider_container" style="margin-top: 0%;  margin-right: 0%; margin-left: 0%;">
+			
+			
+					<!-- Image by https://unsplash.com/@anikindimitry -->
+					<div class="home_slider_background" style="margin-top: 0%;  margin-right: 0%; margin-left: 0%;">
+						<img src="assets/images/parking.png" alt="" style="width: 100%; height: 100%; "></div>
+
+							<div class="contact_form_section">
+								<div class="container">
+									<div class="row">
+										<div class="col">
+						
+											<!-- Contact Form -->
+											<div class="contact_form_container" style="margin-top: 5%;">
+						<form  id="contact_form" class="contact_form text-center" >
+              
+              
+
+              <input type="text" id="contact_form_username" class="contact_form_name input_field" placeholder="Location" name="location" required="required" data-error="Location is required." required [(ngModel)]="location"> <br>
+							<input type="text" id="contact_form_username" class="contact_form_name input_field" placeholder="Phone number" name="phone" required="required" data-error="Phone is required." required [(ngModel)]="phone"> <br>
+              
+              <span>
+                <label  class="contact_form_name input_field" style="color: blueviolet;">Choose type of parking :</label>
+                <select class="contact_form_name input_field" name="type" required [(ngModel)]="type" style="color: blueviolet;">
+                <option  value="Airoport">Airoport</option>
+                <option  value="Private-parking">Private parking</option>
+                <option  value="Mall">Mall</option>
+              </select> 
+              </span>
+							<input type="text" id="contact_form_username" class="contact_form_name input_field" placeholder="Nbr of Places" name="nbrPlaces" required="required" data-error="NbrPlaces is required." required [(ngModel)]="nbrPlaces"> <br>
+							<input type="text" id="contact_form_username" class="contact_form_name input_field" placeholder="Price " name="price" required="required" data-error="Price is required." required [(ngModel)]="price"> <br>
+							<input type="text" id="contact_form_username" class="contact_form_name input_field" placeholder="Area " name="area" required="required" data-error="Area is required." required [(ngModel)]="area"> <br>
+
+							<button type="submit" id="form_submit_button" class="form_submit_button button trans_200" (click)="add()" [disabled]="btnDisabled">
+								 Add parking  </button>
+
+						  
+						</form>
+					</div>
+		
+					
+				</div>
+			</div>
+									
+		</div>
+	</div>
+
+
+
+
+</div>
+
+</div>
+<!-- Contact -->
+
+
+
+
+<div class="intro">
+<div class="container">
+<div class="row">
+<div class="col">
+	<h2 class="intro_title text-center">Choose a car park, book and start saving!</h2>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-10 offset-lg-1">
+	<div class="intro_text text-center">
+		<p>Save time , save money and save face ! </p>
+	</div>
+</div>
+</div>
+<div class="row intro_items">
+
+<!-- Intro Item -->
+
+<div class="col-lg-4 intro_col">
+	<div class="intro_item">
+		<div class="intro_item_overlay"></div>
+		<!-- Image by https://unsplash.com/@dnevozhai -->
+		<div class="intro_item_background" style="background-image:url(assets/images/parkingCars.jpg)"></div>
+		<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
+			<div class="intro_date">Pick a date</div>
+			<div class="button intro_button"><div class="button_bcg"></div><a href="#">see more<span></span><span></span><span></span></a></div>
+			<div class="intro_center text-center">
+				<h1>La marsa</h1>
+				<div class="intro_price">From 1$</div>
+				<div class="rating rating_4">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Intro Item -->
+
+<div class="col-lg-4 intro_col">
+	<div class="intro_item">
+		<div class="intro_item_overlay"></div>
+		<!-- Image by https://unsplash.com/@hellolightbulb -->
+		<div class="intro_item_background" style="background-image:url(assets/images/parkingCars.jpg)"></div>
+		<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
+			<div class="intro_date">Pick a date</div>
+			<div class="button intro_button"><div class="button_bcg"></div><a href="#">see more<span></span><span></span><span></span></a></div>
+			<div class="intro_center text-center">
+				<h1>Lac</h1>
+				<div class="intro_price">From 1$</div>
+				<div class="rating rating_4">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Intro Item -->
+
+<div class="col-lg-4 intro_col">
+	<div class="intro_item">
+		<div class="intro_item_overlay"></div>
+		<!-- Image by https://unsplash.com/@willianjusten -->
+		<div class="intro_item_background" style="background-image:url(assets/images/parkingCars.jpg)"></div>
+		<div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
+			<div class="intro_date">Pick a date</div>
+			<div class="button intro_button"><div class="button_bcg"></div><a href="#">see more<span></span><span></span><span></span></a></div>
+			<div class="intro_center text-center">
+				<h1>Ariana</h1>
+				<div class="intro_price">From 1$</div>
+				<div class="rating rating_4">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- Offers -->
+
+<div class="offers">
+<div class="container">
+<div class="row">
+<div class="col text-center">
+	<h2 class="section_title">the best offers , only exist here</h2>
+</div>
+</div>
+<div class="row offers_items">
+
+<!-- Offers Item -->
+<div class="col-lg-6 offers_col">
+	<div class="offers_item">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="offers_image_container">
+					<!-- Image by https://unsplash.com/@kensuarez -->
+					<div class="offers_image_background" style="background-image:url(assets/images/park.png)"></div>
+					<div class="offer_name"><a href="#">La marsa</a></div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="offers_content">
+					<div class="offers_price">1DT<span>per hour</span></div>
+					<div class="rating_r rating_r_4 offers_rating">
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+					</div>
+					<p class="offers_text">Park your car safely AND save money.</p>
+					<div class="offers_icons">
+						<ul class="offers_icons_list">
+							<li class="offers_icons_item"><img src="assets/images/post.png" alt=""></li>
+							<li class="offers_icons_item"><img src="assets/images/compass.png" alt=""></li>
+							<li class="offers_icons_item"><img src="assets/images/bicycle.png" alt=""></li>
+							<li class="offers_icons_item"><img src="assets/images/sailboat.png" alt=""></li>
+						</ul>
+					</div>
+					<div class="offers_link"><a href="offers.html">read more</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Offers Item -->
+<div class="col-lg-6 offers_col">
+	<div class="offers_item">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="offers_image_container">
+					<!-- Image by Egzon Bytyqi -->
+					<div class="offers_image_background" style="background-image:url(assets/images/park.png)"></div>
+					<div class="offer_name"><a href="#">Lac</a></div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="offers_content">
+					<div class="offers_price">2DT<span>per hour</span></div>
+					<div class="rating_r rating_r_4 offers_rating">
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+					</div>
+					<p class="offers_text">Park your car safely AND save money.</p>
+					<div class="offers_icons">
+						<ul class="offers_icons_list">
+							<li class="offers_icons_item"><img src="assets/images/post.png" alt=""></li>
+							<li class="offers_icons_item"><img src="assets/images/compass.png" alt=""></li>
+							<li class="offers_icons_item"><img src="assets/images/bicycle.png" alt=""></li>
+							<li class="offers_icons_item"><img src="assets/images/sailboat.png" alt=""></li>
+						</ul>
+					</div>
+					<div class="offers_link"><a href="offers.html">read more</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="contact">
+<div class="contact_background" style="background-image:url(assets/images/contact.png)"></div>
+
+<div class="container">
+<div class="row">
+<div class="col-lg-5">
+	<div class="contact_image">
+		
+	</div>
+</div>
+<div class="col-lg-7">
+	<div class="contact_form_container">
+		<div class="contact_title">get in touch</div>
+		<form action="#" id="contact_form" class="contact_form">
+			<input type="text" id="contact_form_name" class="contact_form_name input_field" placeholder="Name" required="required" data-error="Name is required.">
+			<input type="text" id="contact_form_email" class="contact_form_email input_field" placeholder="E-mail" required="required" data-error="Email is required.">
+			<input type="text" id="contact_form_subject" class="contact_form_subject input_field" placeholder="Subject" required="required" data-error="Subject is required.">
+			<textarea id="contact_form_message" class="text_field contact_form_message" name="message" rows="4" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
+			<button type="submit" id="form_submit_button" class="form_submit_button button">send message<span></span><span></span><span></span></button>
+		</form>
+	</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+
+<footer class="footer">
+<div class="container">
+<div class="row">
+
+<!-- Footer Column -->
+<div class="col-lg-3 footer_column">
+	<div class="footer_col">
+		<div class="footer_content footer_about">
+			<div class="logo_container footer_logo">
+				<div class="logo"><a href="#"><img src="assets/images/logo.png" alt="">Park'In</a></div>
+			</div>
+			<p class="footer_about_text">Park'In is your all time favourite parking reservation platform.</p>
+			<ul class="footer_social_list">
+				<li class="footer_social_item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+				<li class="footer_social_item"><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+				<li class="footer_social_item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li class="footer_social_item"><a href="#"><i class="fa fa-dribbble"></i></a></li>
+				<li class="footer_social_item"><a href="#"><i class="fa fa-behance"></i></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Footer Column -->
+<div class="col-lg-3 footer_column">
+	<div class="footer_col">
+		<div class="footer_title">blog posts</div>
+		<div class="footer_content footer_blog">
+			
+			<!-- Footer blog item -->
+			<div class="footer_blog_item clearfix">
+				<div class="footer_blog_image"><img src="assets/images/park.png" alt="https://unsplash.com/@avidenov"></div>
+				<div class="footer_blog_content">
+					<div class="footer_blog_title"><a href="blog.html">Book your car</a></div>
+					<div class="footer_blog_date">Decemeber 22, 2020</div>
+				</div>
+			</div>
+			
+			<!-- Footer blog item -->
+			<div class="footer_blog_item clearfix">
+				<div class="footer_blog_image"><img src="assets/images/park.png" alt="https://unsplash.com/@deannaritchie"></div>
+				<div class="footer_blog_content">
+					<div class="footer_blog_title"><a href="blog.html">New destinations for you</a></div>
+					<div class="footer_blog_date">Decemeber 22, 2020</div>
+				</div>
+			</div>
+
+			<!-- Footer blog item -->
+			<div class="footer_blog_item clearfix">
+				<div class="footer_blog_image"><img src="assets/images/park.png" alt="https://unsplash.com/@bergeryap87"></div>
+				<div class="footer_blog_content">
+					<div class="footer_blog_title"><a href="blog.html">Save your time and protect your car</a></div>
+					<div class="footer_blog_date">Decemeber 22, 2020</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- Footer Column -->
+<div class="col-lg-3 footer_column">
+	<div class="footer_col">
+		<div class="footer_title">tags</div>
+		<div class="footer_content footer_tags">
+			<ul class="tags_list clearfix">
+				<li class="tag_item"><a href="#">Parkings</a></li>
+				<li class="tag_item"><a href="#">Reservation</a></li>
+				<li class="tag_item"><a href="#">National</a></li>
+				<li class="tag_item"><a href="#">International</a></li>
+				<li class="tag_item"><a href="#">Save time</a></li>
+				<li class="tag_item"><a href="#">Safe car</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- Footer Column -->
+<div class="col-lg-3 footer_column">
+	<div class="footer_col">
+		<div class="footer_title">contact info</div>
+		<div class="footer_content footer_contact">
+			<ul class="contact_info_list">
+				<li class="contact_info_item d-flex flex-row">
+					<div><div class="contact_info_icon"><img src="assets/images/placeholder.svg" alt=""></div></div>
+					<div class="contact_info_text">Tunis</div>
+				</li>
+				<li class="contact_info_item d-flex flex-row">
+					<div><div class="contact_info_icon"><img src="assets/images/phone-call.svg" alt=""></div></div>
+					<div class="contact_info_text">97909285</div>
+				</li>
+				<li class="contact_info_item d-flex flex-row">
+					<div><div class="contact_info_icon"><img src="assets/images/message.svg" alt=""></div></div>
+					<div class="contact_info_text"><a href="mailto:contactme@gmail.com?Subject=Hello" target="_top">chaimaa.benhsouna@gmail.com</a></div>
+				</li>
+				<li class="contact_info_item d-flex flex-row">
+					<div><div class="contact_info_icon"><img src="assets/images/planet-earth.svg" alt=""></div></div>
+					<div class="contact_info_text"><a href="https://colorlib.com">www.parkin.com</a></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+</footer>
+
+<!-- Copyright -->
+
+<div class="copyright">
+<div class="container">
+<div class="row">
+
+<div class="col-lg-9 order-lg-2 order-1">
+	<div class="footer_nav_container d-flex flex-row align-items-center justify-content-lg-end">
+		<div class="footer_nav">
+			<ul class="footer_nav_list">
+				<li class="footer_nav_item"><a href="#">home</a></li>
+				<li class="footer_nav_item"><a href="about.html">about us</a></li>
+				<li class="footer_nav_item"><a href="offers.html">offers</a></li>
+				<li class="footer_nav_item"><a href="blog.html">news</a></li>
+				<li class="footer_nav_item"><a href="contact.html">contact</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="assets/styles/bootstrap4/popper.js"></script>
+<script src="assets/styles/bootstrap4/bootstrap.min.js"></script>
+<script src="assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="assets/plugins/easing/easing.js"></script>
+<script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>
